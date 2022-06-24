@@ -23,8 +23,9 @@ import time
 import re
 import pkgutil
 import string
-sys.path.insert(0, os.path.abspath('.'))
 import f5_sphinx_theme
+
+sys.path.insert(0, os.path.abspath('.'))
 
 year = time.strftime("%Y")
 eventname = "Agility %s Hands-on Lab Guide" % (year)
@@ -181,7 +182,9 @@ html_theme_options = {
                         'site_name': 'Community Training Classes & Labs',
                         'next_prev_link': True
                      }
+html_codeblock_linenos_style = 'table'
 html_last_updated_fmt = '%Y-%m-%d %I:%M:%S'
+html_context = {"github_url":github_repo, "github_branch":git_branch_name}
 
 def setup(app):
     app.add_stylesheet('css/f5_agility_theme.css')
